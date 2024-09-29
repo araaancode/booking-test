@@ -1,0 +1,255 @@
+<!doctype html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://majidh1.github.io/JalaliDatePicker/assets/demo.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script type="text/javascript"
+        src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+</head>
+
+<body>
+    <header class="bg-white drop-shadow-sm">
+        <nav class=" mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="/خانه" class="-m-1.5 p-1.5">
+                    <span class="sr-only"></span>
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                        alt="سفیر">
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <div class="relative">
+                    <div
+                        class="absolute hidden -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+
+                        <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                            <a href="#"
+                                class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M2 10a8 8 0 1116 0 8 8 0 01-16 0zm6.39-2.908a.75.75 0 01.766.027l3.5 2.25a.75.75 0 010 1.262l-3.5 2.25A.75.75 0 018 12.25v-4.5a.75.75 0 01.39-.658z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Watch demo
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Contact sales
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                        aria-hidden="true">&rarr;</span></a> -->
+                <button class="rounded-md px-4 py-2 transition flex flex-row text-gray-700 items-center"
+                    onclick="openModal('modelConfirm')">
+                    <i class="ri-user-line ml-2 text-xl"></i>
+                    ورود یا ثبت نام
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="">
+        <!-- <div class="bg-cover bg-center w-full h-64"
+            style="background-image: url('');">
+        </div> -->
+        <div 
+            class="flex flex-col justify-center items-center mb-6 p-6">
+            <div class="flex">
+                <select style="width: 130px;" id="firstCity" class="bg-white mr-3 px-4 py-2 border rounded-md">
+                    <option selected>مبدا</option>
+                    <option value="isfahan">اصفهان</option>
+                    <option value="tehran">تهران</option>
+                    <option value="tabriz">تبریز</option>
+                    <option value="rasht">رشت</option>
+                </select>
+                <select style="width: 130px;" id="lastCity" class="bg-white mr-3 px-4 py-2 border rounded-md">
+                    <option selected>مقصد</option>
+                    <option value="isfahan">اصفهان</option>
+                    <option value="tehran">تهران</option>
+                    <option value="tabriz">تبریز</option>
+                    <option value="rasht">رشت</option>
+                </select>
+                <input style="width: 100px;" type="number" id="count" min="1" max="6"
+                    class="bg-white mr-3 px-4 py-2 border rounded-md" placeholder="نفرات">
+                <input style="width: 100px;" type="text" id="movingDate"
+                    class="bg-white mr-3 px-4 py-2 border rounded-md" data-jdp data-jdp-min-date="today"
+                    placeholder="تاریخ حرکت" />
+                <button style="width: 150px;height: 40px;"
+                    class="bg-yellow-400 mr-3 px-4 py-1 border hover:bg-yellow-300 rounded-md" id="search">
+                    جستجو
+                </button>
+            </div>
+            <div id="bus" class="flex flex-col justify-center items-center m-6">
+                <!-- start bus -->
+                <!-- <div class="border rounded-md shadow shadow-md bus grid grid-cols-2 gap-4 m-4">
+                    <div style="width: 75%;">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2">
+                                <img class="m-4 rounded-md w-50 h-20 inline"
+                                    src="https://plus.unsplash.com/premium_photo-1674823610129-64e6c712fbe3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnVzfGVufDB8fDB8fHww"
+                                    alt="Card image">
+                                <span class="ml-4" id="bus-title"> Card Title 1</span>
+                                <span class="ml-4">first city</span>
+                                <span class="ml-4">last city</span>
+                                <span class="ml-4">arriavl</span>
+                                <span class="ml-4">count</span>
+                                <span class="ml-4">moving date</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 25%;" class="border-r border-solid border-gray-300 p-4">
+                        <p>12500</p>
+                        <button
+                            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">رزرو
+                            بلیط</button>
+                    </div>
+                </div> -->
+                <!-- end bus -->
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 
+        <h1 style="text-align:center">jalali datePicker - دیت پیکر شمسی</h1>
+        <input type="text" data-jdp placeholder="لطفا یک تاریخ وارد نمایید" />
+        <input type="text" data-jdp data-jdp-min-date="today" placeholder="نمایش تاریخ از امروز" />
+        <input type="text" data-jdp data-jdp-max-date="today" placeholder="نمایش تاریخ تا امروز" />
+        <input type="text" data-jdp data-jdp-max-date="1401/10/08" placeholder="نمایش تاریخ تا 1401/10/08" />
+
+        <div class="settings" dir="rtl">
+            <a target="_blank" href="https://github.com/majidh1/JalaliDatePicker">
+                Github
+            </a>
+        </div>
+        <p>این پلاگین تنظیمات زیادی دارد که می توانید از لینک github مستندات کاملش رو مشاهده کنید.</p>
+        <p> با انتخاب کنترل input پلاگین date picker فعال شده و می توانید تاریخ مورد نظر خود را انتخاب نمایید</p>
+
+        <h1>persian date picker</h1> -->
+    </div>
+
+
+
+
+    <div id="modelConfirm"
+        class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-500 w-full mb-10">
+        <div class="relative top-40 mx-auto rounded-md bg-white max-w-md" style="padding: 15px 50px;">
+            <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+                <div class="bg-white py-8 px-4 sm:rounded-lg sm:px-10 text-center">
+                    <span class="text-2xl block font-bold text-center"> ورود یا ثبت‌نام</span>
+                    <br>
+                    <span class="mt-12">برای ادامه شماره موبایل خود را وارد کنید.</span>
+                    <form>
+                        <div>
+                            <label for="email" class="block text-sm font-medium leading-5 mt-8 text-gray-700">
+                                شماره همراه
+                            </label>
+                            <div class="mt-1 relative rounded-md shadow-sm mb-8">
+                                <input id="email" name="email" placeholder="0938xxxxxxxx" type="email" required=""
+                                    value=""
+                                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-yellow focus:border-yellow-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                <div
+                                    class="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="text-warning">
+                            <i class="ri-error-warning-line text-xl"></i>
+                            استفاده از علی‌بابا به معنی پذیرش قوانین و مقررات این سرویس است.
+                        </div>
+
+                        <div class="mt-12">
+                            <span class="block w-full rounded-md shadow-sm">
+                                <button type="submit"
+                                    class="w-full flex justify-center py-2 px-4 border border-transparent text-white font-medium rounded-md text-black bg-blue-600 hover:bg-blue-800 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
+                                    ورود
+                                </button>
+                            </span>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.openModal = function (modalId) {
+            document.getElementById(modalId).style.display = 'block'
+            document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+        }
+
+        window.closeModal = function (modalId) {
+            document.getElementById(modalId).style.display = 'none'
+            document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+        }
+
+        // Close all modals when press ESC
+        document.onkeydown = function (event) {
+            event = event || window.event;
+            if (event.keyCode === 27) {
+                document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden')
+                let modals = document.getElementsByClassName('modal');
+                Array.prototype.slice.call(modals).forEach(i => {
+                    i.style.display = 'none'
+                })
+            }
+        };
+    </script>
+    <script>
+        jalaliDatepicker.startWatch({
+            minDate: "attr",
+            maxDate: "attr"
+        });
+        /* Below is a js demo | you don't need to use */
+        setTimeout(function () {
+            var elm = document.getElementsByTagName("input")[0];
+            elm.focus();
+            jalaliDatepicker.hide();
+            jalaliDatepicker.show(elm);
+        }, 1000);
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
